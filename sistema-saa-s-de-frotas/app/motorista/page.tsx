@@ -6,18 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import Link from 'next/link'
-import {
-  Car,
-  MapPin,
-  ClipboardCheck,
-  Fuel,
-  Calendar,
-  Clock,
-  AlertTriangle,
-  CheckCircle2,
-  Navigation,
-  Phone,
-} from 'lucide-react'
+import { Car, MapPin, ClipboardCheck, Fuel, Calendar, Clock, TriangleAlert as AlertTriangle, CircleCheck as CheckCircle2, Navigation, Phone } from 'lucide-react'
 
 export default function DriverHomePage() {
   const { user, vehicles, trips, alerts } = useStore()

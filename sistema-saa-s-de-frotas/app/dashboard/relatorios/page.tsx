@@ -10,20 +10,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
-import {
-  FileText,
-  Download,
-  Calendar,
-  Car,
-  Users,
-  Fuel,
-  Wrench,
-  MapPin,
-  TrendingUp,
-  DollarSign,
-  BarChart3,
-  PieChart,
-} from 'lucide-react'
+import { FileText, Download, Calendar, Car, Users, Fuel, Wrench, MapPin, TrendingUp, DollarSign, ChartBar as BarChart3, ChartPie as PieChart } from 'lucide-react'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { monthlyKmData, fuelCostData, maintenanceCostData } from '@/lib/mock-data'
