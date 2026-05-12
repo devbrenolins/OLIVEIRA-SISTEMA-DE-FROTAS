@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Truck, Shield, Smartphone, Eye, EyeOff, Loader2 } from 'lucide-react'
+import { Truck, Shield, Smartphone, Eye, EyeOff, Loader as Loader2 } from 'lucide-react'
 import { toast } from 'sonner'
 
 export default function LoginPage() {
@@ -86,7 +86,7 @@ export default function LoginPage() {
               <Truck className="h-7 w-7 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-foreground">FleetPro</h1>
+              <h1 className="text-3xl font-bold text-foreground">OLIVEIRA FROTAS</h1>
               <p className="text-sm text-muted-foreground">Gestão de Frotas</p>
             </div>
           </div>
@@ -102,8 +102,8 @@ export default function LoginPage() {
           
           <div className="space-y-6">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center text-primary shrink-0">
+              <div key={index} className={`flex items-start gap-4 animate-slide-up stagger-${index + 1}`}>
+                <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center text-primary shrink-0 transition-transform hover:scale-110">
                   {feature.icon}
                 </div>
                 <div>
@@ -124,10 +124,10 @@ export default function LoginPage() {
             <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
               <Truck className="h-6 w-6 text-primary-foreground" />
             </div>
-            <h1 className="text-2xl font-bold text-foreground">FleetPro</h1>
+            <h1 className="text-2xl font-bold text-foreground">OLIVEIRA FROTAS</h1>
           </div>
 
-          <Card className="border-border/50 shadow-2xl">
+          <Card className="border-border/50 shadow-2xl animate-scale-in">
             <CardHeader className="text-center pb-4">
               <CardTitle className="text-2xl">Bem-vindo de volta</CardTitle>
               <CardDescription>
@@ -263,7 +263,7 @@ export default function LoginPage() {
           </Card>
 
           <p className="text-center text-sm text-muted-foreground mt-6">
-            &copy; 2024 FleetPro. Todos os direitos reservados.
+            &copy; 2025 OLIVEIRA FROTAS. Todos os direitos reservados.
           </p>
         </div>
       </div>

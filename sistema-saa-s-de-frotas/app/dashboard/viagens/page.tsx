@@ -37,24 +37,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
-import {
-  MapPin,
-  Plus,
-  Search,
-  MoreHorizontal,
-  Edit,
-  Eye,
-  Filter,
-  Calendar,
-  Clock,
-  CheckCircle2,
-  CircleDot,
-  XCircle,
-  Car,
-  User,
-  Navigation,
-  ArrowRight,
-} from 'lucide-react'
+import { MapPin, Plus, Search, MoveHorizontal as MoreHorizontal, CreditCard as Edit, Eye, ListFilter as Filter, Calendar, Clock, CircleCheck as CheckCircle2, CircleDot, Circle as XCircle, Car, User, Navigation, ArrowRight } from 'lucide-react'
 import { toast } from 'sonner'
 import type { Trip } from '@/lib/types'
 
@@ -174,7 +157,7 @@ export default function TripsPage() {
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="vehicle">Veículo</Label>
                   <Select
@@ -232,7 +215,7 @@ export default function TripsPage() {
                   required
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="start">Saída</Label>
                   <Input
@@ -286,7 +269,7 @@ export default function TripsPage() {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
@@ -535,7 +518,7 @@ export default function TripsPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-lg bg-secondary/50">
                         <div className="flex items-center gap-2 mb-2">
                           <Car className="h-4 w-4 text-muted-foreground" />

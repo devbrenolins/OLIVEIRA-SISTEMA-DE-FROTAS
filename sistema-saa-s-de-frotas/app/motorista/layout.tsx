@@ -4,19 +4,8 @@ import { useEffect } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { useStore } from '@/lib/store'
-import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
-import {
-  Truck,
-  Home,
-  ClipboardCheck,
-  MapPin,
-  Fuel,
-  Settings,
-  LogOut,
-  Menu,
-  X,
-} from 'lucide-react'
+import { Truck, Hop as Home, ClipboardCheck, MapPin, Fuel, LogOut, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -61,7 +50,7 @@ export default function DriverLayout({
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <Truck className="h-5 w-5 text-primary-foreground" />
             </div>
-            <span className="font-bold text-lg">FleetPro</span>
+            <span className="font-bold text-lg">OLIVEIRA FROTAS</span>
           </Link>
 
           <div className="flex items-center gap-3">
@@ -73,10 +62,11 @@ export default function DriverLayout({
               </Avatar>
               <span className="text-sm font-medium">{user?.name}</span>
             </div>
-            
+
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="sm:hidden p-2 text-muted-foreground hover:text-foreground"
+              aria-label="Menu"
             >
               {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -84,7 +74,7 @@ export default function DriverLayout({
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {menuOpen && (
         <div className="sm:hidden fixed inset-0 top-16 z-40 bg-background">
           <nav className="p-4 space-y-2">
@@ -119,13 +109,47 @@ export default function DriverLayout({
         </div>
       )}
 
-      {/* Main Content */}
-      <main className="flex-1 p-4 pb-24 sm:pb-4">
-        {children}
-      </main>
+      <div className="flex flex-1">
+        {/* Desktop Sidebar */}
+        <aside className="hidden sm:flex w-16 bg-card border-r border-border flex-col items-center py-4 gap-4 shrink-0">
+          {navigation.map((item) => {
+            const isActive = pathname === item.href
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  'p-3 rounded-lg transition-colors relative group',
+                  isActive
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
+                )}
+              >
+                <item.icon className="h-5 w-5" />
+                <span className="absolute left-full ml-2 px-2 py-1 rounded bg-popover text-popover-foreground text-sm whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                  {item.name}
+                </span>
+              </Link>
+            )
+          })}
+          <div className="flex-1" />
+          <button
+            onClick={handleLogout}
+            className="p-3 rounded-lg text-destructive hover:bg-destructive/10 transition-colors"
+            aria-label="Sair"
+          >
+            <LogOut className="h-5 w-5" />
+          </button>
+        </aside>
+
+        {/* Main Content */}
+        <main className="flex-1 p-4 pb-24 sm:pb-4 overflow-auto">
+          {children}
+        </main>
+      </div>
 
       {/* Bottom Navigation (Mobile) */}
-      <nav className="sm:hidden fixed bottom-0 left-0 right-0 h-20 bg-card border-t border-border z-40">
+      <nav className="sm:hidden fixed bottom-0 left-0 right-0 h-20 bg-card border-t border-border z-40 safe-area-bottom">
         <div className="h-full grid grid-cols-4 gap-1 px-2">
           {navigation.map((item) => {
             const isActive = pathname === item.href
@@ -145,46 +169,6 @@ export default function DriverLayout({
           })}
         </div>
       </nav>
-
-      {/* Desktop Sidebar */}
-      <aside className="hidden sm:flex fixed left-0 top-16 bottom-0 w-16 bg-card border-r border-border flex-col items-center py-4 gap-4">
-        {navigation.map((item) => {
-          const isActive = pathname === item.href
-          return (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={cn(
-                'p-3 rounded-lg transition-colors relative group',
-                isActive
-                  ? 'bg-primary/10 text-primary'
-                  : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
-              )}
-            >
-              <item.icon className="h-5 w-5" />
-              <span className="absolute left-full ml-2 px-2 py-1 rounded bg-popover text-popover-foreground text-sm whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                {item.name}
-              </span>
-            </Link>
-          )
-        })}
-        <div className="flex-1" />
-        <button
-          onClick={handleLogout}
-          className="p-3 rounded-lg text-destructive hover:bg-destructive/10 transition-colors"
-        >
-          <LogOut className="h-5 w-5" />
-        </button>
-      </aside>
-
-      {/* Desktop Content Offset */}
-      <style jsx global>{`
-        @media (min-width: 640px) {
-          main {
-            margin-left: 4rem;
-          }
-        }
-      `}</style>
     </div>
   )
 }

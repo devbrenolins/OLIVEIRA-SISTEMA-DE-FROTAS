@@ -44,11 +44,11 @@ export default function DriverHomePage() {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Link href="/motorista/inspecao">
-          <Card className="cursor-pointer hover:border-primary/50 transition-colors h-full">
+          <Card className="cursor-pointer hover:border-primary/50 hover:shadow-lg transition-all h-full">
             <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
                 <ClipboardCheck className="h-6 w-6 text-primary" />
               </div>
               <p className="font-medium">Nova Inspeção</p>
@@ -57,9 +57,9 @@ export default function DriverHomePage() {
           </Card>
         </Link>
         <Link href="/motorista/abastecimento">
-          <Card className="cursor-pointer hover:border-primary/50 transition-colors h-full">
+          <Card className="cursor-pointer hover:border-primary/50 hover:shadow-lg transition-all h-full">
             <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full">
-              <div className="w-12 h-12 rounded-xl bg-chart-2/10 flex items-center justify-center mb-3">
+              <div className="w-12 h-12 rounded-xl bg-chart-2/10 flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
                 <Fuel className="h-6 w-6 text-chart-2" />
               </div>
               <p className="font-medium">Abastecimento</p>
@@ -93,7 +93,7 @@ export default function DriverHomePage() {
                 </Badge>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-3 rounded-lg bg-secondary/50">
                 <p className="text-xs text-muted-foreground">Hodômetro</p>
                 <p className="font-semibold">
@@ -153,7 +153,7 @@ export default function DriverHomePage() {
               <Progress value={65} className="h-2" />
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-3 rounded-lg bg-secondary/50">
                 <div className="flex items-center gap-1 text-xs text-muted-foreground mb-1">
                   <Clock className="h-3 w-3" />

@@ -5,21 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
-import {
-  Car,
-  Users,
-  Wrench,
-  MapPin,
-  TrendingUp,
-  TrendingDown,
-  AlertTriangle,
-  Fuel,
-  Activity,
-  Clock,
-  CheckCircle2,
-  ArrowUpRight,
-  ArrowDownRight,
-} from 'lucide-react'
+import { Car, Users, Wrench, MapPin, TrendingUp, TrendingDown, TriangleAlert as AlertTriangle, Fuel, Activity, Clock, CircleCheck as CheckCircle2, ArrowUpRight, ArrowDownRight } from 'lucide-react'
 import { mockDashboardStats, monthlyKmData, fuelCostData, vehicleStatusData } from '@/lib/mock-data'
 import {
   AreaChart,
@@ -120,8 +106,8 @@ export default function DashboardPage() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {stats.map((stat) => (
-          <Card key={stat.name} className="relative overflow-hidden">
+        {stats.map((stat, index) => (
+          <Card key={stat.name} className={`relative overflow-hidden animate-slide-up stagger-${index + 1}`}>
             <CardContent className="p-6">
               <div className="flex items-start justify-between">
                 <div className="space-y-2">

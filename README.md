@@ -1,6 +1,6 @@
-# OLIVEIRA FLEET CONTROL
+# OLIVEIRA FROTAS
 
-Sistema interno de gestão de frotas desenvolvido para operação, controle logístico e acompanhamento técnico da **OLIVEIRA MANUTENÇÃO E VENDAS**.
+Sistema interno de gestão de frotas desenvolvido para operação, controle logistico e acompanhamento tecnico da **OLIVEIRA MANUTENCAO E VENDAS**.
 
 A aplicação centraliza o gerenciamento da frota, ordens de serviço, motoristas, inspeções operacionais e acompanhamento de viagens, oferecendo controle administrativo e rastreabilidade completa da operação.
 

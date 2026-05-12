@@ -37,21 +37,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
-import {
-  Car,
-  Plus,
-  Search,
-  MoreHorizontal,
-  Edit,
-  Trash2,
-  Eye,
-  Truck,
-  Filter,
-  SortAsc,
-  Wrench,
-  Calendar,
-  Gauge,
-} from 'lucide-react'
+import { Car, Plus, Search, MoveHorizontal as MoreHorizontal, CreditCard as Edit, Trash2, Eye, Truck, ListFilter as Filter, Import as SortAsc, Wrench, Calendar, Gauge } from 'lucide-react'
 import { toast } from 'sonner'
 import type { Vehicle } from '@/lib/types'
 
@@ -184,7 +170,7 @@ export default function VehiclesPage() {
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="plate">Placa</Label>
                   <Input
@@ -208,7 +194,7 @@ export default function VehiclesPage() {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="brand">Marca</Label>
                   <Input
@@ -230,7 +216,7 @@ export default function VehiclesPage() {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="type">Tipo</Label>
                   <Select
@@ -264,7 +250,7 @@ export default function VehiclesPage() {
                   </Select>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="status">Status</Label>
                   <Select
@@ -307,7 +293,7 @@ export default function VehiclesPage() {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
@@ -516,7 +502,7 @@ export default function VehiclesPage() {
                 </Badge>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-4 rounded-lg bg-secondary/50">
                   <div className="flex items-center gap-2 mb-2">
                     <Gauge className="h-4 w-4 text-muted-foreground" />

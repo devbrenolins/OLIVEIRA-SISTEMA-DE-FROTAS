@@ -31,19 +31,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
-import {
-  Fuel,
-  Plus,
-  Search,
-  Filter,
-  Calendar,
-  Car,
-  User,
-  TrendingUp,
-  DollarSign,
-  Gauge,
-  Droplets,
-} from 'lucide-react'
+import { Fuel, Plus, Search, ListFilter as Filter, Calendar, Car, User, TrendingUp, DollarSign, Gauge, Droplets } from 'lucide-react'
 import { toast } from 'sonner'
 import { mockFuelRecords, fuelCostData } from '@/lib/mock-data'
 import {
@@ -135,7 +123,7 @@ export default function FuelPage() {
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="vehicle">Veículo</Label>
                   <Select
@@ -173,7 +161,7 @@ export default function FuelPage() {
                   </Select>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="date">Data/Hora</Label>
                   <Input
@@ -201,7 +189,7 @@ export default function FuelPage() {
                   </Select>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="quantity">Litros</Label>
                   <Input
@@ -227,7 +215,7 @@ export default function FuelPage() {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="odometer">Hodômetro (km)</Label>
                   <Input
@@ -269,7 +257,7 @@ export default function FuelPage() {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center gap-3">

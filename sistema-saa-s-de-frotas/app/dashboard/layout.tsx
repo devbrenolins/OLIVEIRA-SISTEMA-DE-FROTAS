@@ -16,23 +16,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import {
-  Truck,
-  LayoutDashboard,
-  Car,
-  Users,
-  Wrench,
-  MapPin,
-  FileText,
-  Settings,
-  Bell,
-  LogOut,
-  ChevronDown,
-  Menu,
-  X,
-  Fuel,
-  AlertTriangle,
-} from 'lucide-react'
+import { Truck, LayoutDashboard, Car, Users, Wrench, MapPin, FileText, Settings, Bell, LogOut, ChevronDown, Menu, X, Fuel, TriangleAlert as AlertTriangle } from 'lucide-react'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -98,7 +82,7 @@ export default function DashboardLayout({
               <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
                 <Truck className="h-5 w-5 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold text-sidebar-foreground">FleetPro</span>
+              <span className="text-xl font-bold text-sidebar-foreground">OLIVEIRA FROTAS</span>
             </Link>
             <button
               onClick={() => setSidebarOpen(false)}

@@ -16,9 +16,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'FleetPro - Sistema de Gestão de Frotas',
-  description: 'Sistema completo para gestão de frotas empresariais',
-  generator: 'v0.app',
+  title: 'OLIVEIRA FROTAS - Sistema de Gestão de Frotas',
+  description: 'Sistema completo para gestão de frotas empresariais - OLIVEIRA MANUTENÇÃO E VENDAS',
 }
 
 export default function RootLayout({

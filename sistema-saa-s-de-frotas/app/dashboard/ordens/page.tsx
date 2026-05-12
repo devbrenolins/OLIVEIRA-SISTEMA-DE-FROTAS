@@ -38,23 +38,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
-import {
-  Wrench,
-  Plus,
-  Search,
-  MoreHorizontal,
-  Edit,
-  Trash2,
-  Eye,
-  Filter,
-  Calendar,
-  Clock,
-  CheckCircle2,
-  AlertTriangle,
-  CircleDot,
-  XCircle,
-  Car,
-} from 'lucide-react'
+import { Wrench, Plus, Search, MoveHorizontal as MoreHorizontal, CreditCard as Edit, Trash2, Eye, ListFilter as Filter, Calendar, Clock, CircleCheck as CheckCircle2, TriangleAlert as AlertTriangle, CircleDot, Circle as XCircle, Car } from 'lucide-react'
 import { toast } from 'sonner'
 import type { ServiceOrder } from '@/lib/types'
 
@@ -216,7 +200,7 @@ export default function ServiceOrdersPage() {
                   required
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="type">Tipo</Label>
                   <Select
@@ -250,7 +234,7 @@ export default function ServiceOrdersPage() {
                   </Select>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="status">Status</Label>
                   <Select
@@ -278,7 +262,7 @@ export default function ServiceOrdersPage() {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="cost">Custo Estimado (R$)</Label>
                   <Input
@@ -325,7 +309,7 @@ export default function ServiceOrdersPage() {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
@@ -538,7 +522,7 @@ export default function ServiceOrdersPage() {
                       <p className="text-sm">{viewingOrder.description}</p>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-lg bg-secondary/50">
                         <div className="flex items-center gap-2 mb-2">
                           <Calendar className="h-4 w-4 text-muted-foreground" />

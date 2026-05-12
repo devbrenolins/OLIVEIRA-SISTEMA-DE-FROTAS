@@ -15,21 +15,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
-import {
-  Settings,
-  Database,
-  Building2,
-  Globe,
-  Shield,
-  CheckCircle2,
-  AlertTriangle,
-  ExternalLink,
-  Eye,
-  EyeOff,
-  Loader2,
-  Server,
-  Key,
-} from 'lucide-react'
+import { Settings, Database, Building2, Globe, Shield, CircleCheck as CheckCircle2, TriangleAlert as AlertTriangle, ExternalLink, Eye, EyeOff, Loader as Loader2, Server, Key } from 'lucide-react'
 import { toast } from 'sonner'
 
 export default function SettingsPage() {
@@ -272,7 +258,7 @@ export default function SettingsPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {['vehicles', 'drivers', 'service_orders', 'trips', 'inspections', 'fuel_records', 'alerts', 'users'].map((table) => (
                   <div key={table} className="p-3 rounded-lg bg-secondary/50 border border-border">
                     <p className="font-mono text-sm">{table}</p>
@@ -313,7 +299,7 @@ export default function SettingsPage() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="currency">Moeda</Label>
                   <Select
@@ -348,7 +334,7 @@ export default function SettingsPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="distanceUnit">Unidade de Distância</Label>
                   <Select
@@ -413,7 +399,7 @@ export default function SettingsPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="p-4 rounded-lg bg-secondary/50 border border-border">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <p className="text-sm text-muted-foreground">Nome</p>
                     <p className="font-medium">{user?.name || '-'}</p>
